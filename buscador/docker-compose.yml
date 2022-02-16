@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    ports:
+      - 27018:27017
+    volumes:
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+    environment:
+        MONGO_INITDB_DATABASE: buscador
+
+volumes:
+    mongodb:
+    mongodb_config:
